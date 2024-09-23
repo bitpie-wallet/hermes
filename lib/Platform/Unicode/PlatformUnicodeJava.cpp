@@ -60,7 +60,7 @@ class JAndroidUnicodeUtils
 
  public:
   static auto constexpr kJavaDescriptor =
-      "Lcom/facebook/hermes/unicode/AndroidUnicodeUtils;";
+      "Lcom/bitpie/hermes/unicode/AndroidUnicodeUtils;";
 
   /// Compares two strings using the user's chosen locale to order chars.
   /// Equivalent of left.localeCompare(right) in JS.

@@ -20,7 +20,7 @@ namespace jni = ::facebook::jni;
 class JSRuntime : public jni::HybridClass<JSRuntime> {
  public:
   constexpr static auto kJavaDescriptor =
-      "Lcom/facebook/hermes/test/JSRuntime;";
+      "Lcom/bitpie/hermes/JSRuntime;";
 
   static jni::local_ref<jhybridobject> makeHermesRuntime(
       jni::alias_ref<jclass>,
@@ -47,6 +47,7 @@ class JSRuntime : public jni::HybridClass<JSRuntime> {
   void callFunction(std::string functionName);
 
   std::string getRecordedGCStats();
+
 
  private:
   friend HybridBase;

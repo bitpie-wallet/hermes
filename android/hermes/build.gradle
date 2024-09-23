@@ -106,7 +106,7 @@ android {
   }
 
   packagingOptions {
-    exclude "**/libc++_shared.so"
+    // exclude "**/libc++_shared.so"
     exclude "**/libjsi.so"
     exclude "**/libfbjni.so"
   }

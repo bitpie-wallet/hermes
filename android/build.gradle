@@ -13,7 +13,7 @@ def release_version = "0.12.0"
 
 buildscript {
   ext {
-    hermes_ws = System.getenv("HERMES_WS_DIR")
+    hermes_ws = rootProject.projectDir.parentFile.parentFile.absolutePath
     if (hermes_ws == null || hermes_ws == "") {
       throw new InvalidUserDataException("HERMES_WS_DIR is not set")
     }
@@ -22,7 +22,7 @@ buildscript {
     file("${outputDir}/aar").mkdirs()
 
     facebookBuild = System.getenv("FACEBOOK") ?: "0"
-    hermesHostBuild = System.getenv("HERMES_WS_DIR")
+    hermesHostBuild = rootProject.projectDir.parentFile.parentFile.absolutePath
 
     // Look for a hermes host build, either debug or release
     // This is used as part of the Hermes build process

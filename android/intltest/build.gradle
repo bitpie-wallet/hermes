@@ -80,6 +80,16 @@ android {
     ndk {
       abiFilters (*rootProject.ext.abis)
     }
+
+    buildTypes {
+      release {
+        externalNativeBuild {
+          cmake {
+            arguments "-DCMAKE_BUILD_TYPE=Release", "-DANDROID_STRIP=TRUE"
+          }
+        }
+      }
+    }
   }
 
   externalNativeBuild {

@@ -206,7 +206,7 @@ std::vector<Part> partsFromJava(jni::local_ref<JPartsList> &&result) {
 
 class JIntl : public jni::JavaClass<JIntl> {
  public:
-  static constexpr auto kJavaDescriptor = "Lcom/facebook/hermes/intl/Intl;";
+  static constexpr auto kJavaDescriptor = "Lcom/bitpie/hermes/intl/Intl;";
 
   static jni::local_ref<JLocalesList> getCanonicalLocales(
       jni::alias_ref<JLocalesList> locales) {
@@ -281,7 +281,7 @@ namespace {
 
 class JCollator : public jni::JavaClass<JCollator> {
  public:
-  static constexpr auto kJavaDescriptor = "Lcom/facebook/hermes/intl/Collator;";
+  static constexpr auto kJavaDescriptor = "Lcom/bitpie/hermes/intl/Collator;";
 
   static jni::local_ref<javaobject> create(
       jni::alias_ref<JLocalesList> locales,
@@ -401,7 +401,7 @@ namespace {
 class JDateTimeFormat : public jni::JavaClass<JDateTimeFormat> {
  public:
   static constexpr auto kJavaDescriptor =
-      "Lcom/facebook/hermes/intl/DateTimeFormat;";
+      "Lcom/bitpie/hermes/intl/DateTimeFormat;";
 
   static jni::local_ref<javaobject> create(
       jni::alias_ref<JLocalesList> locales,
@@ -537,7 +537,7 @@ namespace {
 class JNumberFormat : public jni::JavaClass<JNumberFormat> {
  public:
   static constexpr auto kJavaDescriptor =
-      "Lcom/facebook/hermes/intl/NumberFormat;";
+      "Lcom/bitpie/hermes/intl/NumberFormat;";
 
   static jni::local_ref<javaobject> create(
       jni::alias_ref<JLocalesList> locales,
