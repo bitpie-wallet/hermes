@@ -74,7 +74,7 @@ android {
         arguments "-DIMPORT_HERMESC=${rootProject.ext.hermesC}"
         arguments "-DHERMES_SLOW_DEBUG=False"
         arguments "-DHERMES_ENABLE_INTL=True"
-        targets "jsijni", "jsijniepi", "libhermes"
+        targets "jsijni", "jsijniepi", "libhermes", "libjsi", "libfbjni"
       }
     }
     ndk {
