@@ -20,7 +20,7 @@ namespace jni = ::facebook::jni;
 class HermesEpilogue : public jni::HybridClass<HermesEpilogue> {
  public:
   constexpr static auto kJavaDescriptor =
-      "Lcom/bitpie/hermes/HermesEpilogue;";
+      "Lcom/txdecode/hermes/HermesEpilogue;";
   static jni::local_ref<jbyteArray> getHermesBytecodeMetadata(
       jni::alias_ref<jclass>,
       jni::alias_ref<jbyteArray> bytes);
