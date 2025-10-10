@@ -56,10 +56,11 @@ task prepareTests() {
 
 // TODO: Figure out how to deduplicate this file and intl/build.gradle
 android {
-  compileSdkVersion 31
+  compileSdkVersion 35
+  namespace "com.facebook.hermes.intltest"
 
   defaultConfig {
-    minSdkVersion 16
+    minSdkVersion 26
     ndk {
       abiFilters (*rootProject.ext.abis)
     }
@@ -74,6 +75,8 @@ android {
         arguments "-DIMPORT_HERMESC=${rootProject.ext.hermesC}"
         arguments "-DHERMES_SLOW_DEBUG=False"
         arguments "-DHERMES_ENABLE_INTL=True"
+        arguments "-DCMAKE_CXX_LINK_OPTIONS_IPO=-fuse-ld=lld;-Wl,-z,max-page-size=0x4000"
+        arguments "-DCMAKE_C_LINK_OPTIONS_IPO=-fuse-ld=lld;-Wl,-z,max-page-size=0x4000"
         targets "jsijni", "jsijniepi", "libhermes", "libjsi", "libfbjni"
       }
     }
