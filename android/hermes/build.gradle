@@ -26,6 +26,8 @@ android {
         arguments "-DIMPORT_HERMESC=${rootProject.ext.hermesC}"
         arguments "-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=True"
         arguments "-DHERMES_BUILD_SHARED_JSI=True"
+        arguments "-DCMAKE_CXX_LINK_OPTIONS_IPO=-fuse-ld=lld;-Wl,-z,max-page-size=0x4000"
+        arguments "-DCMAKE_C_LINK_OPTIONS_IPO=-fuse-ld=lld;-Wl,-z,max-page-size=0x4000"
         targets "jsijni", "jsijniepi", "libhermes"
       }
     }

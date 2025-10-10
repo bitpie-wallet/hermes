@@ -12,6 +12,7 @@ buildDir.mkdirs()
 
 android {
   compileSdkVersion = rootProject.ext.compileSdkVersion
+  namespace "com.facebook.hermes.cppruntime"
 
   defaultConfig {
     minSdkVersion = rootProject.ext.minSdkVersion
@@ -19,6 +20,8 @@ android {
       cmake {
         arguments "-DANDROID_STL=c++_shared"
         arguments "-DANDROID_PIE=True"
+        arguments "-DCMAKE_CXX_LINK_OPTIONS_IPO=-fuse-ld=lld;-Wl,-z,max-page-size=0x4000"
+        arguments "-DCMAKE_C_LINK_OPTIONS_IPO=-fuse-ld=lld;-Wl,-z,max-page-size=0x4000"
       }
     }
 
