@@ -20,7 +20,7 @@ namespace jni = ::facebook::jni;
 class JSRuntime : public jni::HybridClass<JSRuntime> {
  public:
   constexpr static auto kJavaDescriptor =
-      "Lcom/bitpie/hermes/JSRuntime;";
+      "Lcom/txdecode/hermes/JSRuntime;";
 
   static jni::local_ref<jhybridobject> makeHermesRuntime(
       jni::alias_ref<jclass>,
